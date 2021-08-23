@@ -17,12 +17,6 @@ use Flarum\User\User;
 
 class Gravatar
 {
-    /**
-     * Gravatar base url.
-     *
-     * @var string
-     */
-    private string $publicBaseUrl = 'https://www.gravatar.com/avatar/';
 
     /**
      * Email address to check.
@@ -100,7 +94,7 @@ class Gravatar
      */
     private function buildUrl(): string
     {
-        $url = $this->publicBaseUrl;
+        $url = $this->settings->get('ianm-gravatar.mirror','https://www.gravatar.com/avatar/');
         $url .= $this->hashEmail();
         $url .= $this->getExtension();
         $url .= $this->getUrlParameters();

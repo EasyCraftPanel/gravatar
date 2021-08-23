@@ -6,6 +6,12 @@ app.initializers.add('ianm/gravatar', () => {
     app.extensionData
         .for('ianm-gravatar')
         .registerSetting({
+            label: app.translator.trans('ianm-gravatar.admin.settings.mirror.title'),
+            setting: 'ianm-gravatar.mirror',
+            type: 'text',
+            help: app.translator.trans('ianm-gravatar.admin.settings.mirror.helptext'),
+        })
+        .registerSetting({
             label: app.translator.trans('ianm-gravatar.admin.settings.proxy.title'),
             setting: 'ianm-gravatar.proxy',
             type: 'bool',
